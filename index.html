@@ -87,22 +87,17 @@
         button:hover {
             background-color: #c97302;
         }
-           .contact-icons {
-            margin-top: 10px;
+
+        .contact-icons img {
+            width: 40px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
 
-        .contact-icons a {
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
-            font-size: 24px;
-            vertical-align: middle;
+        .contact-icons img:hover {
+            transform: scale(1.2);
         }
-
-        .contact-icons a:hover {
-            color: #dd8203;
-        }
-
 
     </style>
 </head>
@@ -150,15 +145,14 @@
             <button type="submit">Submit</button>
         </form>
     </section>
-     <section id="contact">
+
+    <section id="contact">
         <h2>Contact Us</h2>
-        <p>If you have any questions, please reach out to us:</p>
         <p>Email: info@srdpublicconvent.edu</p>
         <p>Phone: +91 9839542475, 9919858924</p>
         <div class="contact-icons">
-            <a href="mailto:ajayjha3849@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+919839542475" title="Call Us"><i class="fas fa-phone"></i></a>
-            <a href="tel:+919919858924" title="Call Us"><i class="fas fa-phone"></i></a>
+            <a href="mailto:jhasahab924@gmail.com"><img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email"></a>
+            <a href="tel:+919839542475"><img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Call"></a>
         </div>
     </section>
 
@@ -174,7 +168,7 @@
             const parentName = document.getElementById('parentName').value;
             const contact = document.getElementById('contact').value;
             const message = `New Admission Request:%0AName: ${name}%0AClass: ${studentClass}%0AParent Name: ${parentName}%0AContact: ${contact}`;
-            const whatsappUrl = `https://wa.me/919839542475?text=${message}`;
+            const whatsappUrl = `https://wa.me/917309393849?text=${message}`;
             window.open(whatsappUrl, '_blank');
         }
     </script>
