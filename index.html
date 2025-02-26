@@ -12,7 +12,6 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #f5f5f5;
         }
 
         header {
@@ -25,6 +24,7 @@
         nav ul {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 0;
             margin: 10px 0;
             list-style-type: none;
@@ -48,9 +48,10 @@
             padding: 20px;
             margin: 10px;
             border: 1px solid #ccc;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .department {
+            margin-bottom: 20px;
         }
 
         footer {
@@ -61,45 +62,29 @@
             margin-top: auto;
         }
 
-        .form-container {
-            margin-top: 20px;
-            max-width: 500px;
-            width: 100%;
+        .contact-icons {
+            margin-top: 10px;
         }
 
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+        .contact-icons a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 24px;
+            vertical-align: middle;
         }
 
-        button {
-            background-color: #dd8203;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: background 0.3s;
+        .contact-icons a:hover {
+            color: #dd8203;
         }
 
-        button:hover {
-            background-color: #c97302;
+        @media (max-width: 600px) {
+            nav ul li {
+                margin: 5px;
+            }
         }
-
-        .contact-icons img {
-            width: 40px;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .contact-icons img:hover {
-            transform: scale(1.2);
-        }
-
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -108,7 +93,7 @@
             <ul>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#departments">Departments</a></li>
-                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="admission-form.html">Admissions</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -121,57 +106,34 @@
 
     <section id="departments">
         <h2>Departments</h2>
-        <div>
+        <div class="department">
             <h3>Play-way, L.K.G. and U.K.G.</h3>
             <p>Children will get to learn new things in a fun and engaging way.</p>
         </div>
-        <div>
+        <div class="department">
             <h3>Class 1st to Class 5th</h3>
-            <p>Affiliated to Uttar Pradesh Basic Shiksha Parishad. Students will learn primary-level concepts in various subjects.</p>
+            <p>Affiliated to Uttar Pradesh Basic Shiksha Parishad. Students will learn the concepts of different subjects at the primary level.</p>
         </div>
-        <div>
+        <div class="department">
             <h3>Class 6th to Class 8th</h3>
             <p>Students will gain knowledge of various subjects at the junior level, preparing them for higher education.</p>
         </div>
     </section>
 
-    <section id="admissions" class="form-container">
-        <h2>Admission Form</h2>
-        <form onsubmit="sendOnWhatsApp(event)">
-            <input type="text" id="name" placeholder="Student Name" required><br>
-            <input type="text" id="class" placeholder="Class" required><br>
-            <input type="text" id="parentName" placeholder="Parent Name" required><br>
-            <input type="text" id="contact" placeholder="Contact Number" required><br>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
     <section id="contact">
         <h2>Contact Us</h2>
+        <p>If you have any questions, please reach out to us:</p>
         <p>Email: info@srdpublicconvent.edu</p>
         <p>Phone: +91 9839542475, 9919858924</p>
         <div class="contact-icons">
-            <a href="mailto:jhasahab924@gmail.com"><img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email"></a>
-            <a href="tel:+919839542475"><img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Call"></a>
+            <a href="mailto:ajayjha3849@gmail.com" title="Email Us"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+919839542475" title="Call Us"><i class="fas fa-phone"></i></a>
+            <a href="tel:+919919858924" title="Call Us"><i class="fas fa-phone"></i></a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2025 S.R.D. PUBLIC CONVENT. All rights reserved.</p>
     </footer>
-
-    <script>
-        function sendOnWhatsApp(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const studentClass = document.getElementById('class').value;
-            const parentName = document.getElementById('parentName').value;
-            const contact = document.getElementById('contact').value;
-            const message = `New Admission Request:%0AName: ${name}%0AClass: ${studentClass}%0AParent Name: ${parentName}%0AContact: ${contact}`;
-            const whatsappUrl = `https://wa.me/917309393849?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
-    </script>
-
 </body>
 </html>
